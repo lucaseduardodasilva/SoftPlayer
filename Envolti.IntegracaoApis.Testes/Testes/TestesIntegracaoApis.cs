@@ -44,5 +44,13 @@ namespace Envolti.IntegracaoApis.Testes.Testes
             var value = await response.Content.ReadAsStringAsync();
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
         }
+
+        [Fact]
+        public async Task DeveRetornarOkShowmethecode()
+        {
+            var response = await _clientCalculaJuros.Cliente.GetAsync(Urls.ShowMeTheCode);
+            response.EnsureSuccessStatusCode();
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+        }
     }
 }
