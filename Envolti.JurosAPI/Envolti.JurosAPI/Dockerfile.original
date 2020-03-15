@@ -10,7 +10,6 @@ WORKDIR /src
 COPY Envolti.JurosAPI/Envolti.JurosAPI.csproj Envolti.JurosAPI/
 COPY Envolti.IoC/Envolti.IoC.csproj Envolti.IoC/
 COPY Envolti.Servicos/Envolti.Servicos.csproj Envolti.Servicos/
-COPY ../Envolti.Dominio.Testes/Envolti.Dominio.Testes.csproj ../Envolti.Dominio.Testes/
 COPY Envolti.Interfaces/Envolti.Interfaces.csproj Envolti.Interfaces/
 RUN dotnet restore Envolti.JurosAPI/Envolti.JurosAPI.csproj
 COPY . .

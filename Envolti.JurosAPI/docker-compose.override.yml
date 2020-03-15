@@ -1,17 +1,17 @@
 version: '3.4'
 
 services:
-  envolti.jurosapi:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"
-
   envolti.calculajurosapi:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "80"
+      - "5000"
+
+  envolti.jurosapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5001"
 
 networks:
   default:
