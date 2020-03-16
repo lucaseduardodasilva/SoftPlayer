@@ -1,15 +1,15 @@
 version: '3.4'
 
 services:
-  envolti.calculajurosapi:
-    image: ${DOCKER_REGISTRY-}envolticalculajurosapi
-    build:
-      context: .
-      dockerfile: Envolti.CalculaJurosAPI\Dockerfile
-
   envolti.jurosapi:
     image: ${DOCKER_REGISTRY-}envoltijurosapi
     build:
       context: .
       dockerfile: Envolti.JurosAPI\Dockerfile
+
+  envolti.calculajurosapi:
+    image: ${DOCKER_REGISTRY-}envolticalculajurosapi
+    build:
+      context: .
+      dockerfile: Envolti.CalculaJurosAPI\Dockerfile
 

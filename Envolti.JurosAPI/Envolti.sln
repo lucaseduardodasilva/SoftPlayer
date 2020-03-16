@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Envolti.Dominio.Testes", ".
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Envolti.Integracao.Testes", "..\Envolti.IntegracaoApis.Testes\Envolti.Integracao.Testes.csproj", "{27F27E8C-CA37-424F-8A83-747C1DDAA8B9}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{55371F49-CD84-4EBF-87F6-1ED279E2DF14}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A56CD2A9-A1E4-4BA4-BDBA-428F7F42A0A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,10 +65,10 @@ Global
 		{27F27E8C-CA37-424F-8A83-747C1DDAA8B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27F27E8C-CA37-424F-8A83-747C1DDAA8B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27F27E8C-CA37-424F-8A83-747C1DDAA8B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55371F49-CD84-4EBF-87F6-1ED279E2DF14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55371F49-CD84-4EBF-87F6-1ED279E2DF14}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55371F49-CD84-4EBF-87F6-1ED279E2DF14}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55371F49-CD84-4EBF-87F6-1ED279E2DF14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A56CD2A9-A1E4-4BA4-BDBA-428F7F42A0A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A56CD2A9-A1E4-4BA4-BDBA-428F7F42A0A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A56CD2A9-A1E4-4BA4-BDBA-428F7F42A0A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A56CD2A9-A1E4-4BA4-BDBA-428F7F42A0A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
