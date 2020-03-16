@@ -10,7 +10,6 @@ WORKDIR /src
 COPY Envolti.CalculaJurosAPI/Envolti.CalculaJurosAPI.csproj Envolti.CalculaJurosAPI/
 COPY Envolti.IoC/Envolti.IoC.csproj Envolti.IoC/
 COPY Envolti.Servicos/Envolti.Servicos.csproj Envolti.Servicos/
-COPY ../Envolti.Dominio.Testes/Envolti.Dominio.Testes.csproj ../Envolti.Dominio.Testes/
 COPY Envolti.Interfaces/Envolti.Interfaces.csproj Envolti.Interfaces/
 COPY Envolti.Excecoes/Envolti.Excecoes.csproj Envolti.Excecoes/
 COPY Envolti.Dominio/Envolti.Dominio.csproj Envolti.Dominio/
