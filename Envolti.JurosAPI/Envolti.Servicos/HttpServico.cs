@@ -18,7 +18,7 @@ namespace Envolti.Servicos
         {
             try
             {
-                var httpResponse = _cliente.GetAsync(Urls.ConsultaJurosUrl);
+                var httpResponse = _cliente.GetAsync(Urls.ConsultaJurosDockerIp);
 
                 if (!httpResponse.Result.IsSuccessStatusCode)
                 {
