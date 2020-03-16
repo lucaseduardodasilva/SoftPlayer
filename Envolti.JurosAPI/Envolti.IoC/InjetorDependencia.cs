@@ -16,6 +16,7 @@ namespace Envolti.IoC
         {
             services.TryAddScoped<ICalculosServico, CalculosServico>();
             services.TryAddScoped<IConsultaTaxaJurosServico, ConsultaTaxaJurosServico>();
+            services.TryAddScoped<ICalculoMockServico, CalculoMockServico>();
             services.TryAddScoped<IHttpServico, HttpServico>();
         }
     }

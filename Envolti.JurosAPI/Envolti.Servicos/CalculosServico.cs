@@ -18,26 +18,37 @@ namespace Envolti.Servicos
             this.consultaTaxaJurosServico = consultaTaxaJurosServico;
         }
 
-        public string CalculaValorTotalComJurosCompostos(decimal valorInicial, int meses)
+        public string CalculaValorTotalComJurosCompostos(decimal valorInicial, int tempo)
         {
-            decimal jurosCalculado = CalculaJuros(meses);
-            decimal valorCalculado = valorInicial * jurosCalculado;
+            try
+            {
+                decimal jurosCalculado = CalculaJuros(tempo);
+                decimal valorCalculado = valorInicial * jurosCalculado;
 
-            decimal valorFinal = Math.Truncate(100 * valorCalculado) / 100;
-            string Total = valorFinal.ToString("N2", CultureInfo.CreateSpecificCulture("pt-BR"));
+                decimal valorFinal = Math.Truncate(100 * valorCalculado) / 100;
+                string Total = valorFinal.ToString("N2", CultureInfo.CreateSpecificCulture("pt-BR"));
 
-            return Total;
+                return Total;
+            }
+            catch (Exception)
+            {
+                throw new ApplicationException("Houve algum erro ao tentar calcular o valor total.");
+            }
         }
 
-        public decimal CalculaJuros(int meses)
+        public decimal CalculaJuros(int tempo)
         {
-            decimal taxaJuros = httpServico.ConsultaTaxaJuros();
-            decimal juros = 1 + taxaJuros;
-            decimal jurosCalculado = Util.CalculaPotencia(juros, meses);
-            return jurosCalculado;
+            try
+            {
+                decimal taxaJuros = httpServico.ConsultaTaxaJuros();
+                decimal juros = 1 + taxaJuros;
+                decimal jurosCalculado = Util.CalculaPotencia(juros, tempo);
+                return jurosCalculado;
+            }
+            catch (Exception)
+            {
+                throw new ApplicationException("Houve algum erro ao tentar calcular o juros.");
+            }
         }
-
-        //var name = Dns.GetHostName(); // get container id
-        //var ip = Dns.GetHostEntry(name).AddressList.FirstOrDefault(x => x.AddressFamily == AddressFamily.InterNetwork);
     }
 }

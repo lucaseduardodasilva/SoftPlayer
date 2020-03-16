@@ -1,6 +1,6 @@
 ﻿using Envolti.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
+using System;
 
 namespace Envolti.JurosAPI.Controllers
 {
@@ -18,7 +18,14 @@ namespace Envolti.JurosAPI.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(consultaTaxaJurosServico.ConsultaTaxaJuros());
+            try
+            {
+                return Ok(consultaTaxaJurosServico.ConsultaTaxaJuros());
+            }
+            catch (Exception)
+            {
+                throw new ApplicationException("Erro ao consultar taxa de juros.");
+            }
         }
     }
 }

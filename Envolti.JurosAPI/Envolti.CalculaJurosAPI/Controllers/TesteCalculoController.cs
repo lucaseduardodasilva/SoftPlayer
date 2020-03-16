@@ -7,23 +7,23 @@ namespace Envolti.CalculaJurosAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CalculaJurosController : ControllerBase
+    public class TesteCalculoController : ControllerBase
     {
-        private readonly ICalculosServico calculosServico;
+        private readonly ICalculoMockServico calculoMockServico;
 
-        public CalculaJurosController(ICalculosServico calculosServico)
+        public TesteCalculoController(ICalculoMockServico calculoMockServico)
         {
-            this.calculosServico = calculosServico;
+            this.calculoMockServico = calculoMockServico;
         }
 
         [HttpPost]
-        public IActionResult Post(decimal valorInicial, int meses)
+        public IActionResult Post([FromQuery]decimal valorInicial, [FromQuery]int meses)
         {
             try
             {
                 if (valorInicial > 0 && meses > 0 && meses < 101)
                 {
-                    return Ok(calculosServico.CalculaValorTotalComJurosCompostos
+                    return Ok(calculoMockServico.CalculaValorTotalComJurosCompostos
                             (valorInicial, meses));
                 }
 

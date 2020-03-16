@@ -4,6 +4,8 @@ Ler a seção Docker.
 
 Como a API CalculaJuros consome a API TaxaJuros por meio do Ip do docker, na máquina que estiver utilizando a aplicação será necessário configurar a Url na classe: `Urls` ex: `public const string ConsultaJurosDockerIp = "http://xxx.xx.xxx.xxx/api/taxaJuros"`;
 
+Na API CalculaJuros, disponilizei uma controller adicional chamada `TesteCalculoController`, que faz o cálculo com a taxa de juros mocada, apenas para caso queiram testar de maneira mais rápida sem ter que rodar o docker.
+
 ## Swagger
 
 As APIs estão documentadas utilizando [Swagger](https://swagger.io/), é possível consumir os métodos das controllers utilizando as páginas do swagger, que disponibilizam cada método das controllers, o verbo e os parâmetros.

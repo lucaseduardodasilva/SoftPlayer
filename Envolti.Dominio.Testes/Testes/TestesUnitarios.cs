@@ -1,6 +1,8 @@
 ﻿using Bogus;
+using Envolti.Dominio.Entidades;
 using Envolti.Dominio.Testes._Builders;
 using Envolti.Dominio.Testes._Util;
+using Envolti.Dominio.Testes.Testes;
 using ExpectedObjects;
 using System;
 using Xunit;
@@ -8,7 +10,7 @@ using Xunit.Abstractions;
 
 namespace Envolti.Dominio.Testes.Entidades
 {
-    public class JurosTeste : IDisposable
+    public class TestesUnitarios : IDisposable
     {
         private readonly ITestOutputHelper _output;
         private readonly decimal _valorInicial;
@@ -16,7 +18,8 @@ namespace Envolti.Dominio.Testes.Entidades
         private readonly int meses;
         private readonly decimal _taxaJuros;
 
-        public JurosTeste(ITestOutputHelper output)
+        public TestesUnitarios
+        (ITestOutputHelper output)
         {
             _output = output;
             var dadoFake = new Faker();
@@ -77,37 +80,21 @@ namespace Envolti.Dominio.Testes.Entidades
                 JurosBuilder.Novo().ComMeses(mesesInvalido).Build())
                 .ComMensagem("Meses não deve ser menor que 1 ou maior que 100.");
         }
-    }
 
-    public class Juros
-    {
-        public Juros(decimal valorInicial, int meses, decimal taxaJuros)
+        [Fact]
+        public void DeveCalcularValorTotal()
         {
-            if (valorInicial < 0.01m)
+            var valores = new
             {
-                throw new ArgumentException("Valor inicial inválido.");
-            }
+                ValorInicial = _valorInicial,
+                Meses = meses,
+                TaxaJuros = _taxaJuros
+            };
 
-            if (taxaJuros < 0.01m)
-            {
-                throw new ArgumentException("Taxa de juros inválida.");
-            }
-
-            if (meses < 1 || meses > 100)
-            {
-                throw new ArgumentException("Meses não deve ser menor que 1 ou maior que 100.");
-            }
-
-
-
-            ValorInicial = valorInicial;
-            Meses = meses;
-            TaxaJuros = taxaJuros;
+            Calculo.CalculaValorTotalComJurosCompostos(valores.ValorInicial, valores.Meses);
         }
-
-        public decimal ValorInicial { get; private set; }
-        public int Meses { get; private set; }
-        public decimal TaxaJuros { get; set; }
     }
+
+   
 
 }

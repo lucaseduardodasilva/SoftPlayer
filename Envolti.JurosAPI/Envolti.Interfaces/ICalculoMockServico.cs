@@ -1,9 +1,7 @@
 ﻿namespace Envolti.Interfaces
 {
-    public interface ICalculosServico
+    public interface ICalculoMockServico
     {
         string CalculaValorTotalComJurosCompostos(decimal valorInicial, int tempo);
-
-        decimal CalculaJuros(int meses);
     }
 }

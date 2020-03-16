@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Envolti.Servicos._Util;
+using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace Envolti.CalculaJurosAPI.Controllers
@@ -12,12 +13,11 @@ namespace Envolti.CalculaJurosAPI.Controllers
         {
             try
             {
-                string url = "https://github.com/lucaseduardodasilva/SoftPlayer";
-                return Ok(url);
+                return Ok(Urls.GitDesafioUrl);
             }
             catch (Exception)
             {
-                throw;
+                throw new ApplicationException("Erro ao consultar a url de repositório do Github.");
             }
         }
     }

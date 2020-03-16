@@ -2,7 +2,9 @@
 using Envolti.IntegracaoApis.Testes.Fixture;
 using Envolti.Servicos._Util;
 using FluentAssertions;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;

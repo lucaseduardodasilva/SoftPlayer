@@ -1,4 +1,4 @@
-﻿using Envolti.Dominio.Testes.Entidades;
+﻿using Envolti.Dominio.Entidades;
 
 namespace Envolti.Dominio.Testes._Builders
 {

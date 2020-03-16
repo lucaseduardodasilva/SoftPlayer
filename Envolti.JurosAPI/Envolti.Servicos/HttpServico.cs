@@ -31,7 +31,6 @@ namespace Envolti.Servicos
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
