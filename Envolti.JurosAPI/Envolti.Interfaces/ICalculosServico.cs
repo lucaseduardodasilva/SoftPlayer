@@ -3,5 +3,7 @@
     public interface ICalculosServico
     {
         string CalculaValorTotalComJurosCompostos(decimal valorInicial, int meses);
+
+        decimal CalculaJuros(int meses);
     }
 }

@@ -2,9 +2,6 @@
 using Envolti.Servicos._Util;
 using System;
 using System.Globalization;
-using System.Linq;
-using System.Net;
-using System.Net.Sockets;
 
 namespace Envolti.Servicos
 {
@@ -14,7 +11,7 @@ namespace Envolti.Servicos
         private readonly IConsultaTaxaJurosServico consultaTaxaJurosServico;
 
         public CalculosServico
-        (IHttpServico httpServico, 
+        (IHttpServico httpServico,
         IConsultaTaxaJurosServico consultaTaxaJurosServico)
         {
             this.httpServico = httpServico;
@@ -23,19 +20,24 @@ namespace Envolti.Servicos
 
         public string CalculaValorTotalComJurosCompostos(decimal valorInicial, int meses)
         {
-            var name = Dns.GetHostName(); // get container id
-            var ip = Dns.GetHostEntry(name).AddressList.FirstOrDefault(x => x.AddressFamily == AddressFamily.InterNetwork);
-
-            var taxaJuros = httpServico.ConsultaTaxaJuros();
-            var juros = 1 + taxaJuros;
-
-            decimal jurosCalculado = Util.CalculaPotencia(juros, meses);
-
+            decimal jurosCalculado = CalculaJuros(meses);
             decimal valorCalculado = valorInicial * jurosCalculado;
 
             decimal valorFinal = Math.Truncate(100 * valorCalculado) / 100;
+            string Total = valorFinal.ToString("N2", CultureInfo.CreateSpecificCulture("pt-BR"));
 
-            return valorFinal.ToString("N2", CultureInfo.CreateSpecificCulture("pt-BR"));
+            return Total;
         }
+
+        public decimal CalculaJuros(int meses)
+        {
+            decimal taxaJuros = httpServico.ConsultaTaxaJuros();
+            decimal juros = 1 + taxaJuros;
+            decimal jurosCalculado = Util.CalculaPotencia(juros, meses);
+            return jurosCalculado;
+        }
+
+        //var name = Dns.GetHostName(); // get container id
+        //var ip = Dns.GetHostEntry(name).AddressList.FirstOrDefault(x => x.AddressFamily == AddressFamily.InterNetwork);
     }
 }
