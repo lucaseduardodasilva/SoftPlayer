@@ -1,3 +1,11 @@
+## Desafio 
+
+Descrição e instruções do [Desafio](https://drive.google.com/file/d/15NBGbmQO7FMnJDbR8Mm_QrJDSyw-5E5s/view?usp=sharing)
+
+## Objetivo
+
+Integrar o time da Softplan e Envolti, ser um Softplayer, e agregar valor aos times.
+
 ## Pontos importantes para o funcionamento da aplicação:
 
 Ler a seção Docker.
